@@ -29,7 +29,7 @@
     height: 100vh;
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: flex-end;
   }
   
   .triangle {
@@ -47,10 +47,14 @@
     height: 100vh;
     width: 20vw;
     background: linear-gradient(to bottom, #d33838, #540f0f);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
   }
   .title{
     color: white;
-    font-size:70px;
+    font-size:calc(3vw + 30px);
     text-align: left;
     margin-left:40px;
     font-weight: 600;
@@ -58,29 +62,165 @@
   .highlightTitle{
     color:#d33838
   }
-  .button{
+  .button {
+    cursor: pointer;
     background-color: #2C2C2C;
-    border : solid #d33838 3px;
     border-radius: 10px;
-    width:200px;
-    height:50px;
-    color:white;
-    font-size:30px;
+    width: 200px;
+    height: 50px;
+    color: white;
+    font-size: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top:10vh;
+    transition: outline 0.1s ease-in-out, outline-offset 0.1s ease-in-out;
+    outline: solid transparent 3px;
   }
+  
+  .button:hover {
+    outline: solid #d33838 3px;
+    outline-offset: 3px;
+  } 
   .text{
     color:#1a1a1a;
+    position: absolute;
+    top: 20vh;
     font-weight:500;
-    font-size:80px;
-    margin-top:20vh;
-    width: 100%;
-    text-align: left;
+    font-size:calc(3vw + 30px);
+    text-indent:-10vw;
   }
   .logo{
     position: absolute;
-    right:calc(10vw + 70px);
+    width:25vw;
+    margin-top:50px;
+    right:calc(70px);
     filter:contrast(80%);
   }
+  /*apply */
+  .applyMain{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    overflow-y: scroll;
+  }
+  .applyContainer{
+    width:80vw;
+    min-width:320px;
+    height:85vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .applySection{
+    background-color:#101010;
+    overflow-y: auto;
+    width:45%;
+    min-width: 300px;
+    height:620px;
+    border-radius:10px;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .appendButton{
+    height:40px;
+    width:40px;
+    border-radius: 50px;
+    background-color: #d33838;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:35px;
+    position:absolute;
+    top:5px;
+    right:15px;
+    cursor: pointer;
+  }
+  .removeButton{
+    height:40px;
+    width:40px;
+    border-radius: 50px;
+    background-color: #d33838;
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size:35px;
+    position:absolute;
+    top:5px;
+    left:15px;
+    cursor: pointer;
+  }
+  .sectionTitle{
+    font-size:35px;
+    text-align: center;
+    width:100%;
+    position: absolute;
+    top:0;
+    color:white;
+  }
+  .inputContainer{
+    width:90%;
+    height:60px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top:20px;
+  }
+
+  .input{
+    width:90%;
+    height:60px;
+    border:none;
+    outline: solid #d33838 3px;
+    border-radius: 10px;
+    background-color: transparent;
+    color:white;
+    text-indent:20px;
+    font-size:35px;
+  }
+  .inputLabel{
+    color:white;
+    position: absolute;
+    padding-left:12px;
+    padding-right:12px;
+    left:50px;
+    top:-15px;
+    background-color: #101010;
+  }
+  .experienceInputs{
+    display: flex;
+    margin-top: 20px;
+    padding-bottom:10px;
+    height: 550px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+  }
+  /* media */
+  @media only screen and (max-width: 600px) {
+     .square{
+      display: none;
+    }
+    .triangle{
+      right:0;
+    }
+  }
+  @media only screen and (max-width: 400px) { 
+   .triangle{
+     height: 27vh;
+   }
+   .title{
+    width:290px;
+    margin:0;
+    text-align: center;
+   }
+ }
