@@ -6,6 +6,7 @@ function Apply() {
   const [formData, setFormData] = useState({
     NAME: '',
     SURNAME: '',
+    EMAIL: '',
     CITY: '',
     JOB: '',
     'BIRTH DATE': '',
@@ -15,6 +16,8 @@ function Apply() {
   const [workExperienceData, setWorkExperienceData] = useState({
     [1]: '',
   });
+
+  const [notificationClass, setNotificationClass] = useState('none');
 
   const handleInputChange = (label, value) => {
     setFormData((prevFormData) => ({
@@ -30,11 +33,33 @@ function Apply() {
     }));
   };
 
-  const handleApplyClick = () => {
-    console.log('Form Data:', { ...formData, workExperienceData });
-    // Add logic to submit or process the form data as needed
-  };
+  const handleApplyClick = async () => {
+    try {
+      const response = await fetch('http://localhost/storageAPI/createApplicant.php ', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ formData, workExperienceData }),
+      });
 
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Server response:', result);
+        // Set the class to 'none' to hide notification and overlay
+        setNotificationClass();
+      } else {
+        console.error('Failed to submit data to the server.');
+        // Set the class to 'error' to show notification and overlay
+      }
+    } catch (error) {
+      console.error('Error sending data to the server:', error);
+      // Set the class to 'error' to show notification and overlay
+    }
+  };
+  const closeAlert = () =>{
+    setNotificationClass('none');
+  }
   const appendInput = () => {
     setWorkExperienceCount((prevCount) => prevCount + 1);
   };
@@ -52,14 +77,20 @@ function Apply() {
 
   return (
     <div className='applyMain'>
+      <div className={`overlay ${notificationClass}`}></div>
+      <div className={`notification ${notificationClass}`}>
+        You've applied succesfully, we'll get back to you as soon as possible!
+        <div className="closeNotification" onClick={closeAlert}>X</div>
+      </div>
       <div className="applyContainer">
         <div className="applySection">
           <div className="sectionTitle">PERSONAL INFORMATION</div>
-          <Input label="NAME" onChange={(value) => handleInputChange('NAME', value)} />
-          <Input label="SURNAME" onChange={(value) => handleInputChange('SURNAME', value)} />
-          <Input label="CITY" onChange={(value) => handleInputChange('CITY', value)} />
-          <Input label="JOB" onChange={(value) => handleInputChange('JOB', value)} />
-          <Input label="BIRTH DATE" onChange={(value) => handleInputChange('BIRTH DATE', value)} />
+          <Input label="NAME" type="text" onChange={(value) => handleInputChange('NAME', value)} />
+          <Input label="SURNAME" type="text" onChange={(value) => handleInputChange('SURNAME', value)} />
+          <Input label="EMAIL" type="text" onChange={(value) => handleInputChange('EMAIL', value)} />
+          <Input label="CITY" type="text" onChange={(value) => handleInputChange('CITY', value)} />
+          <Input label="JOB" type="text" onChange={(value) => handleInputChange('JOB', value)} />
+          <Input label="BIRTH DATE" type="date" onChange={(value) => handleInputChange('BIRTH DATE', value)} />
         </div>
         <div className="applySection" id="experience">
           <div className="sectionTitle">WORK EXPERIENCE</div>

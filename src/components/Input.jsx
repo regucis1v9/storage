@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../css/App.css';
 
-function Input({ label, onChange }) {
+function Input({ label, type, onChange }) {
   // Local state for the input value
   const [inputValue, setInputValue] = useState('');
 
@@ -21,12 +21,11 @@ function Input({ label, onChange }) {
       <label className='inputLabel'>{label}</label>
       <input
         className="input"
-        type="text"
+        type={type}
         value={inputValue}
         onChange={handleInputChange}
       />
     </div>
   );
 }
-
 export default Input;
