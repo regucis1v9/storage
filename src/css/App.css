@@ -111,7 +111,7 @@
     align-items: center;
     justify-content: center;
     color:white;
-    font-size:35px;
+    font-size:25px;
     padding:10px;
   }
   .closeNotification{
@@ -203,8 +203,6 @@
     font-size:35px;
     text-align: center;
     width:100%;
-    position: absolute;
-    top:0;
     color:white;
   }
   .inputContainer{
@@ -225,7 +223,7 @@
     background-color: transparent;
     color:white;
     text-indent:20px;
-    font-size:35px;
+    font-size:25px;
   }
   .inputLabel{
     color:white;

@@ -46,8 +46,9 @@ function Apply() {
       if (response.ok) {
         const result = await response.json();
         console.log('Server response:', result);
-        // Set the class to 'none' to hide notification and overlay
-        setNotificationClass();
+        if(result['message'] == "Applicant inserted"){
+          setNotificationClass();
+        }
       } else {
         console.error('Failed to submit data to the server.');
         // Set the class to 'error' to show notification and overlay
