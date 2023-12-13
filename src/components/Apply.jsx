@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/App.css';
+import '../css/Regnars.css';
 import Input from './Input';
 
 function Apply() {
@@ -93,7 +93,7 @@ function Apply() {
           <Input label="JOB" type="text" onChange={(value) => handleInputChange('JOB', value)} />
           <Input label="BIRTH DATE" type="date" onChange={(value) => handleInputChange('BIRTH DATE', value)} />
         </div>
-        <div className="applySection" id="experience">
+        <div className="applySection secondBox" id="experience">
           <div className="sectionTitle">WORK EXPERIENCE</div>
           <div className="experienceInputs">
             {[...Array(workExperienceCount)].map((_, index) => (

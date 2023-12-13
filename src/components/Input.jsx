@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../css/App.css';
+import '../css/Regnars.css';
 
 function Input({ label, type, onChange }) {
   // Local state for the input value

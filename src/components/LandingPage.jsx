@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/App.css';
+import '../css/Regnars.css';
 import { useNavigate } from 'react-router-dom';
 
 function LandingPage() {
@@ -10,7 +10,7 @@ function LandingPage() {
     navigate('/apply');
   };
   return (
-    <div className='main'>
+    <div className='landingMain'>
       <div className="loginSection">
         <div className="title">THE BEST <span className="highlightTitle">STORAGE SOLUTION</span> YOU WILL FIND</div>
         <div className="button" onClick={redirect}>Get started</div>

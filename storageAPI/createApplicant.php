@@ -36,9 +36,11 @@ class createApplicant extends DB {
             $job = $personalData['JOB']; 
             $birthDate = $personalData['BIRTH DATE'];
         
-            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $peronSQL = "INSERT INTO `applicants`(`name`, `surname`, `email`, `city`, `job`, `birth_date`) VALUES ('$name', '$surname', '$email', '$city', '$job', '$birthDate')";
-                $personResult = $this->conn->query($peronSQL);
+            $emailCheck = "SELECT * FROM `applicants` WHERE LOWER(`email`) = LOWER('$email')";
+            $emailResult = $this->conn->query($emailCheck);
+            if (filter_var($email, FILTER_VALIDATE_EMAIL)  && $emailResult->num_rows == 0) {
+                $personSQL = "INSERT INTO `applicants`(`name`, `surname`, `email`, `city`, `job`, `birth_date`) VALUES ('$name', '$surname', '$email', '$city', '$job', '$birthDate')";
+                $personResult = $this->conn->query($personSQL);
         
                 if ($personResult) {
                     $applicantID = $this->conn->insert_id;
@@ -56,7 +58,7 @@ class createApplicant extends DB {
                     }
                 }
             } else {
-                echo json_encode(array('error' => 'Invalid email'));
+                echo json_encode(array('error' => 'Email invalid or already taken.'));
             }
         } else {
             echo json_encode(['error' => 'Personal data needs to be filled out.']);
