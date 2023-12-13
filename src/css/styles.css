@@ -1,0 +1,672 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Jost&family=Koulen&display=swap');
+ body {
+     scroll-behavior: smooth;
+}
+ ::-webkit-scrollbar {
+     width: 10px;
+}
+ ::-webkit-scrollbar-thumb {
+     background: #D33838;
+     border-radius: 5px;
+}
+ ::-webkit-scrollbar-thumb:hover {
+     background: #D33838;
+}
+ * {
+     scrollbar-width: thin;
+     scrollbar-color: #D33838 #f1f1f1;
+}
+ ::-webkit-scrollbar-thumb {
+     box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+}
+ *{
+     margin: 0;
+     padding: 0;
+     font-family: 'Archivo Black', sans-serif;
+     font-family: 'Jost', sans-serif;
+     font-family: 'Koulen', sans-serif;
+     text-decoration: none;
+}
+ .container-mar{
+     width: 100vw;
+     height: 100vh;
+     background: rgb(4, 4, 4);
+     /* background: linear-gradient(180deg, rgba(91,18,18,1) 0%, rgba(0,0,0,1) 100%); */
+     display: flex;
+     flex-wrap: wrap;
+}
+ .topBar-mar{
+     width: 100%;
+     height: 80px;
+     background-color: #131313;
+     display: flex;
+     flex-wrap: wrap;
+     color: white;
+     font-family: 'Archivo Black', sans-serif;
+     font-family: 'Jost', sans-serif;
+     font-family: 'Koulen', sans-serif;
+}
+ .spanTop-mar{
+     width: 100%;
+     height: 100%;
+     font-size: 40px;
+     font-weight: bold;
+     text-align: center;
+     line-height: 80px;
+}
+ .boxContainer-mar{
+     width: 80%;
+     height: 60%;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-evenly;
+     align-items: center;
+     flex-direction: row;
+     margin: 0 auto;
+     justify-content: flex-start;
+}
+ .box-mar{
+     width: 342px;
+     height: 140px;
+     flex-shrink: 0;
+     border-radius: 15px;
+     border: 4px solid #ff0000;
+     background: #131313;
+     box-shadow: 12px 6px 30px 0px #AE0E0E;
+     margin: 0 20px;
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: row;
+     cursor: pointer;
+     transition: 0.3s;
+}
+ .box-mar:hover{
+     transform: scale(1.03);
+     box-shadow: 20px 9px 50px 0px #AE0E0E;
+     transition: 0.3s;
+}
+ .iconBox-mar{
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     margin: auto;
+     background-color: white;
+     display: flex;
+}
+ .boxRight-mar{
+     width: 60%;
+     height: 100%;
+     display: flex;
+     flex-wrap: wrap;
+     flex-direction: column;
+}
+ .blankBox-mar{
+     width: 100%;
+     height: 20%;
+}
+ .textBox-mar{
+     width: 100%;
+     height: 50%;
+     display: flex;
+     text-align: center;
+}
+ .spanRight-mar{
+     width: 100%;
+     height: 100%;
+     font-size: 35px;
+     font-weight: bold;
+     text-align: center;
+     line-height: 80px;
+     color: white;
+     letter-spacing: 6px;
+}
+ .notiBox-mar{
+     width: 100%;
+     height: 30%;
+     display: flex;
+     justify-content: right;
+     align-items: center;
+}
+ .noti-mar-on{
+     width: 20px;
+     height: 20px;
+     border-radius: 50%;
+     background-color: red;
+     margin-right: 10px;
+     border: 2px solid white;
+}
+ .noti-mar-off{
+     width: 20px;
+     height: 20px;
+     border-radius: 50%;
+     background-color: transparent;
+     margin-right: 10px;
+     border: 2px solid white;
+}
+ .icon{
+     width: 65px;
+     height: 65px;
+     margin: auto;
+     color: black;
+}
+ .test{
+     width: 100px;
+     height: 100px;
+     background-color: red;
+}
+/* -------ORDER--------- */
+ .orderContainer-mar{
+     width: 60%;
+     height: 80%;
+     margin: auto;
+     border-radius: 15px;
+     border: 4px solid #D33838;
+     background: #101010;
+     box-shadow: 12px 16px 31.3px 0px #540F0F;
+     display: flex;
+     flex-wrap: wrap;
+}
+ .orderContainer2-mar{
+     width: 70%;
+     height: 80%;
+     margin: auto;
+     border-radius: 15px;
+     border: 4px solid #D33838;
+     background: #101010;
+     box-shadow: 12px 16px 31.3px 0px #540F0F;
+     display: flex;
+     flex-wrap: wrap;
+}
+.orderContainerCheck-mar{
+    width: 70%;
+    height: 80%;
+    margin: auto;
+    border-radius: 15px;
+    border: 4px solid #D33838;
+    background: #101010;
+    box-shadow: 12px 16px 31.3px 0px #540F0F;
+    display: flex;
+    flex-wrap: wrap;
+}
+.invisContainer-mar{
+    width: 30%;
+    height: 80%;
+    border-radius: 15px;
+    border: 4px solid #D33838;
+    background: #040404;
+    box-shadow: 12px 16px 31.3px 0px #540F0F;
+    flex-wrap: wrap;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+.invisContainer2-mar{
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: 4px solid #D33838;
+    background: #040404;
+    box-shadow: 12px 16px 31.3px 0px #540F0F;
+    flex-wrap: wrap;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: scroll;
+}
+.invisTopBar-mar{
+    width: 90%;
+    height: 40px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    font-size: 30px;
+}
+
+.closeButton{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    margin: 5px auto;
+    border: 2px solid #D33838;
+    background-color: #540F0F;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.infoBox-mar{
+    width: 100%;
+    height: 90px;
+    background-color:#540f0f42;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px auto;
+}
+.infoHeading{
+    width: 100%;
+    height: 30%;
+    color: white;
+    background-color:rgba(255, 0, 0, 0.133);
+    text-align: center;
+    font-size: 20px;
+    line-height: 30px;
+}
+.infoText{
+    width: 100%;
+    margin: auto;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+}
+ .containerHeading-mar{
+     width: 100%;
+     height: 50px;
+     display: flex;
+}
+ .containerSpan-mar{
+     width: 100%;
+     height: 100%;
+     font-size: 40px;
+     font-weight: bold;
+     text-align: center;
+     line-height: 50px;
+     color: white;
+     letter-spacing: 3px;
+}
+ .supplierBox-mar{
+     position: relative;
+     width: 40%;
+     height: 35%;
+     border-radius: 15px;
+     border: 4px solid #D33838;
+     background: #090909;
+     box-shadow: 12px 16px 31.3px 0px #540F0F;
+     margin: auto;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     transition: 0.3s;
+}
+ .backgroundImage-mar {
+     width: 100%;
+     height: 100%;
+     background-size: cover;
+     display: flex;
+     flex-wrap: wrap;
+}
+ .imageText-mar {
+     position: absolute;
+     top: 40%;
+     left: 0;
+     width: 100%;
+     height: 20%;
+     display: flex;
+     color: white;
+     text-align: center;
+     letter-spacing: 3px;
+     justify-content: center;
+     align-items: center;
+     margin: auto;
+     font-size: 40px;
+}
+ .supplierBox-mar:hover{
+     transform: scale(1.03);
+     box-shadow: 20px 9px 50px 0px #AE0E0E;
+     transition: 0.3s;
+}
+ .containerMidBox-mar{
+     width: 95%;
+     height: 75%;
+     margin: auto;
+     margin-top: 20px;
+     display: flex;
+     flex-wrap: wrap;
+     border-radius: 15px;
+     border: 4px solid #D33838;
+     background: #090909;
+     box-shadow: 12px 16px 31.3px 0px #540F0F;
+     overflow-y: scroll;
+     border-right: none;
+     border-left: none;
+}
+ .selectContainer{
+     width: 100%;
+     display: flex;
+}
+ .boxSelect-mar{
+     width: 24%;
+     height: 55px;
+     color: #FFF;
+     border-radius: 15px;
+     border: 4px solid #D33838;
+     background: #000;
+     box-shadow: 12px 16px 31.3px 0px #540F0F;
+     margin: 10px auto;
+     color: white;
+     text-align: center;
+     font-size: 25px;
+}
+ .bottomContainer-mar{
+     width: 100%;
+     height: 10%;
+
+     margin: 0 auto;
+     display: flex;
+     flex-wrap: wrap;
+}
+ .productBox-mar{
+     width: 280px;
+     height: 150px;
+     border-radius: 15px;
+     border: 4px solid #D33838;
+     background: #000;
+     box-shadow: 12px 16px 31.3px 0px #540F0F;
+     margin: 15px auto;
+     display: flex;
+     flex-wrap: wrap 
+}
+.orderBox-mar{
+    width: 350px;
+    height: 200px;
+    border-radius: 15px;
+    border: 4px solid #D33838;
+    background: #000;
+    box-shadow: 12px 16px 31.3px 0px #540F0F;
+    margin: 15px auto;
+    display: flex;
+    flex-wrap: wrap 
+}
+.orderBox2-mar{
+    width: 350px;
+    height: 200px;
+    border-radius: 15px;
+    border: 4px solid #45d338;
+    background: #000;
+    box-shadow: 12px 16px 31.3px 0px #0f5414;
+    margin: 15px auto;
+    display: flex;
+    flex-wrap: wrap 
+}
+ .productHeading-mar{
+     width: 100%;
+     height: 30%;
+     color: white;
+     text-align: center;
+     font-size: 30px;
+}
+ .selectContainer2{
+     width: 100%;
+     height: 70%;
+     display: flex;
+     flex-wrap: wrap;
+}
+ .sizeSelect-mar{
+     width: 45%;
+     height: 50px;
+     border-radius: 12px;
+     border: 2px solid #D33838;
+     background: #000;
+     box-shadow: 12px 5px 31.3px 0px #540F0F;
+     color: white;
+     text-align: center;
+     font-size: 25px;
+     margin: auto;
+}
+ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+}
+ input[type="number"]:focus {
+     outline: none;
+}
+ input[type="number"]:focus::placeholder {
+     color: transparent;
+}
+ ::placeholder{
+     color: WHITE;
+}
+.priceSpan{
+    color: #0eae11;
+}
+.midSpan{
+    color: #540F0F;
+    font-weight: bold;
+}
+
+.empty-mar{
+    width: 25%;
+    height: 95%;
+}
+.totalBox{
+    width: 50%;
+    height: 95%;
+    margin: auto;
+    display: flex;
+}
+.buyBox-mar{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.calculate-mar{
+    width: 35%;
+     border-radius: 12px;
+     border: 2px solid #D33838;
+     background: #000;
+     box-shadow: 12px 5px 31.3px 0px #540F0F;
+     color: white;
+     text-align: center;
+     font-size: 25px;
+     margin: auto;
+     cursor: pointer;
+}
+.totalNumberBox{
+    width: 100%;
+    height: 90%;
+    margin: auto;
+    text-align: center;
+}
+.totalSpan-mar{
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin: auto;
+    cursor: pointer;
+
+}
+.numberSpan{
+    color: #AE0E0E;
+    text-align: center;
+    font-size: 30px;
+    margin: auto;
+    cursor: pointer;
+}
+.buyButton-mar{
+    width: 80%;
+    height: 75%;
+    background-color: rgb(0, 0, 0);
+    border: 2px solid #38d340;
+    border-radius: 12px;
+    box-shadow: 8px 5px 21.3px 0px #38d34080;
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-size: 27px;
+    line-height: 43px;
+    cursor: pointer;
+}
+/* __________________ */
+
+.left-mar{
+    width: 50%;
+    height: 90%;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 20px rgb(0, 0, 0) inset;
+}
+.right-mar{
+    width: 50%;
+    height: 90%;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 20px #000 inset;
+}
+
+.orderInfoBox-mar{
+    width: 100%;
+    height: 40%;
+    background-color: #ae0e0e3e;
+    display: flex;
+}
+.orderInfoBox2-mar{
+    width: 100%;
+    height: 40%;
+    background-color: #1bae0e3e;
+    display: flex;
+}
+.dateOrdered{
+    width: 50%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    font-size: 27px;
+
+}
+.dateOrdered2{
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    font-size: 27px;
+
+}
+.orderTitle{
+    width: 100%;
+    height: 30%;
+    font-size: 20px;
+}
+.deliveryTime{
+    width: 100%;
+    height: 70%;
+    color: white;
+    text-align: center;
+    font-size: 27px;
+}
+
+.seeMore-mar{
+    width: 45%;
+    height: 20%;
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+    border: 2px solid #d33838;
+    border-radius: 12px;
+    box-shadow: 8px 5px 21.3px 0px #d3383880;
+    margin: 10px auto;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.seeMore-mar2{
+    width: 50%;
+    height: 20%;
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+    border: 2px solid #38d347;
+    border-radius: 12px;
+    box-shadow: 8px 5px 21.3px 0px #4ad33880;
+    margin: 10px auto;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.seeMore-mar3{
+    width: 45%;
+    height: 20%;
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+    border: 2px solid #38d347;
+    border-radius: 12px;
+    box-shadow: 8px 5px 21.3px 0px #4ad33880;
+    margin: 10px auto;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.seeMore-mar:hover{
+   transform: scale(1.02);
+   box-shadow: 8px 5px 25.3px 0px #d33838b3;
+    transition: 0.3s;
+}
+.seeMore-mar2:hover{
+    transform: scale(1.02);
+    box-shadow: 8px 5px 25.3px 0px #4ad33880;
+     transition: 0.3s;
+ }
+.title-mar{
+    width: 100%;
+    height: 60px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 10px;
+    
+}
+
+form{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+
+/* ---------MEDIA--------- */
+ @media only screen and (max-width: 600px) {
+     .container-mar{
+         height: auto;
+    }
+     .spanTop-mar{
+         font-size: 25px;
+    }
+     .box-mar{
+         width: 100%;
+         height: 100px;
+         margin: 20px auto;
+    }
+     .iconBox-mar{
+         width: 70px;
+         height: 70px;
+    }
+     .icon{
+         width: 50px;
+         height: 50px;
+    }
+     .spanRight-mar{
+         line-height: normal;
+    }
+     .noti-mar-on, .noti-mar-off{
+         width: 15px;
+         height: 15px;
+    }
+     .spanRight-mar{
+         height: auto;
+         margin: auto;
+         font-size: 25px;
+         letter-spacing: 4px;
+    }
+}
