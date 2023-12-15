@@ -251,38 +251,72 @@
   .applicantMain{
     width:100vw;
     height:100vh;
-    overflow-y: scroll;
+    overflow-y: auto;
     background-color: #1a1a1a;
     display:flex;
     align-items: center;
     justify-content: center;
   }
-  .table {
-    height: 80vh;
-    width: 80vw;
+  .applicantContainer{
+    width:80vw;
+    min-width: 320px;
+    height:700px;
+    overflow-y: auto;
     background-color: #101010;
-    border-collapse: collapse;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
-  .topRow {
-    border: none;
+  .containerTop{
+    width:95%;
+    height:10%;
     border-bottom: solid #d33838 3px;
-    height: 50px;
-    text-align: center;
-    color: white;
-    font-size: 30px;
-    font-weight: 400;
+    display: flex;
   }
-  .dataIndex {
-    padding: 10px; 
+  .applicantRow{
+    width:95%;
+    height:50px;
+    background-color: #0B0B0B;
+    border: solid black 3px;
+    margin-top:10px;
+    display:flex;
+    cursor:pointer;
   }
-  .dataRow {
-    background-color: #0b0b0b;
-    border: solid black 2px;
-    color: white;
-    text-align: center;
-    font-size: 25px;
-    font-weight: 300;
-    height: 50px;
+  .containerIndex{
+    width:10%;
+    height:100%;
+    color:white;
+    font-size:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .containerName{
+    width:40%;
+    height:100%;
+    color:white;
+    font-size:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .containerCity{
+    width:20%;
+    height:100%;
+    color:white;
+    font-size:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .containerJob{
+    width:30%;
+    height:100%;
+    color:white;
+    font-size:30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   /* media */
   @media only screen and (max-width: 749px) {
