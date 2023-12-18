@@ -7,8 +7,8 @@ function LandingPage() {
   const navigate = useNavigate();
 
     const redirect = () => {
-    navigate('/apply');
-  };
+      navigate('/apply');
+    };
   return (
     <div className='landingMain'>
       <div className="loginSection">

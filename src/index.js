@@ -5,7 +5,9 @@ import {
   LandingPage,
   Apply,
   Admin,
-  Applicants
+  Applicants,
+  ApplicantDetails,
+  Login
 } from './components';
 
   const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -13,9 +15,11 @@ import {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/apply" element={<Apply />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/applicants" element={<Applicants />} />
+        <Route path="/applicantdetails/:id" element={<ApplicantDetails />} />
       </Routes>
     </Router>
   );

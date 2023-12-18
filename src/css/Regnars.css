@@ -76,8 +76,12 @@
     transition: outline 0.1s ease-in-out, outline-offset 0.1s ease-in-out;
     outline: solid transparent 3px;
     margin-top:50px;
+    border:none;
   }
-  
+  .noResultsMessage{
+    font-size:40px;
+    color:white;
+  }
   .button:hover {
     outline: solid #d33838 3px;
     outline-offset: 3px;
@@ -141,12 +145,13 @@
   /*apply */
   .applyMain{
     width:100vw;
-    height:100vh;
+    min-height:100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #1a1a1a;
-    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
   .applyContainer{
     width:80vw;
@@ -210,13 +215,29 @@
   }
   .inputContainer{
     width:90%;
-    height:60px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     position: relative;
     margin-top:20px;
   }
-
+  .inputError{
+    color:white;
+  }
+  .marginNone{
+    margin:0px;
+  }
+  .motivationLetter{
+    resize:none;
+    border:none;
+    outline: solid #d33838 3px;
+    background-color: transparent;
+    color:white;
+    font-size:20px;
+    text-indent:10px;
+    height:230px;
+    width:90%;
+  }
   .input{
     width:90%;
     height:60px;
@@ -237,16 +258,34 @@
     top:-15px;
     background-color: #101010;
   }
+  .passwordButton{
+    width: 80%;
+    color: white;
+    margin-top: 10px;
+  }
+  .checkbox{
+    margin-right:10px;
+  }
+  .bg1a1a1a{
+    background-color: #1a1a1a;
+  }
+  .margint65{
+    margin-top:45px;
+  }
+  .margint100{
+    margin-top:100px;
+  }
   .experienceInputs{
     display: flex;
     margin-top: 20px;
     padding-bottom:10px;
-    height: 650px;
+    height: 300px;
     width: 100%;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
   }
+
   /* applicants*/
   .applicantMain{
     width:100vw;
@@ -280,45 +319,162 @@
     border: solid black 3px;
     margin-top:10px;
     display:flex;
+    justify-content: space-between;
     cursor:pointer;
   }
   .containerIndex{
-    width:10%;
+    width:8%;
     height:100%;
     color:white;
-    font-size:30px;
+    font-size:calc(1vmin + 20px);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    overflow-x:auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .containerName{
-    width:40%;
+    width:38%;
     height:100%;
     color:white;
-    font-size:30px;
+    font-size:calc(1vmin + 20px);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    overflow-x:auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .containerCity{
-    width:20%;
+    width:18%;
     height:100%;
     color:white;
-    font-size:30px;
+    font-size:calc(1vmin + 20px);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    overflow-x:auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .containerJob{
-    width:30%;
+    width:28%;
     height:100%;
     color:white;
-    font-size:30px;
+    font-size:calc(1vmin + 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    overflow-x:auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .detailContainer{
+    width: 90vw;
+    min-width: 300px;
+    min-height:600px;
+    background-color: #101010;
+    display:flex;
+    flex-wrap: wrap;
+  }
+  .buttonContainer{
+    height:120px;
+    width:90%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+  }
+  .acceptUser{
+    height:50px;
+    width:200px;
+    border:none;
+    border-radius: 10px;
+    background-color: #328200;
+    color:white;
+    font-size:25px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
+  .denyUser{
+    height:50px;
+    width:200px;
+    border:none;
+    border-radius: 10px;
+    background-color: #820000;
+    color:white;
+    font-size:25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .experienceTitle{
+    width:100%;
+    text-align: center;
+    color:white;
+    font-size:30px;
+    font-weight:600;
+  }
+  .experienceContainer{
+    width:90%;
+    max-height:100px;
+    min-width:280px;
+    min-height:50px;
+    background-color: #d33838;
+    color: #1a1a1a;
+    font-size:25px;
+    font-weight: 400;
+    margin-top:10px;
+    border-radius: 10px;
+    padding:5px;
+    overflow:auto;
+  }
+  .basicDataRow{
+    font-size:30px;
+    color:white;
+    width:80%;
+    margin-top:10px;
+  }
+  .applicationLetter{
+    width:90%;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    height: -webkit-fill-available;
+    color:white;
+    text-indent: 10px;
+    margin-bottom:10px;
+    font-size:25px;
+  }
+  .left{
+    height:80vh;
+    width:50%;
+    min-width:300px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .right{
+    height:80vh;
+    width:50%;
+    min-width: 300px;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
   /* media */
+  @media only screen and (max-width: 950px) {
+    .containerCity, .containerIndex, .containerJob, .containerName{
+      justify-content: flex-start;
+    }
+ }
   @media only screen and (max-width: 749px) {
     .applyMain{
       overflow-x:hidden;
@@ -330,15 +486,21 @@
     width: 65vw;
    }
  }
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 666px) {
      .square{
       display: none;
     }
     .triangle{
       right:0;
     }
+    .left, .right{
+      width:100%;
+    }
+    .acceptUser, .denyUser{
+      width:100%;
+    }
   }
-  @media only screen and (max-width: 400px) { 
+  @media only screen and (max-width: 450px) { 
    .triangle{
      height: 27vh;
    }

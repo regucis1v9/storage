@@ -1,31 +1,32 @@
-import React, { useState } from 'react';
-import '../css/Regnars.css';
+import React from 'react';
 
-function Input({ label, type, onChange }) {
-  // Local state for the input value
-  const [inputValue, setInputValue] = useState('');
-
-  // Handler for updating the local state and notifying the parent component
-  const handleInputChange = (event) => {
-    const value = event.target.value;
-    setInputValue(value);
-
-    // Notify the parent component of the change
-    if (onChange) {
-      onChange(value);
-    }
-  };
-
+const Input = ({ label, type, inputValue, handleInputChange, options }) => {
   return (
     <div className="inputContainer">
       <label className='inputLabel'>{label}</label>
-      <input
-        className="input"
-        type={type}
-        value={inputValue}
-        onChange={handleInputChange}
-      />
+      {type === 'dropdown' ? (
+        <select
+          className="input"
+          value={inputValue}
+          onChange={(e) => handleInputChange(e.target.value)}
+        >
+          <option value="" disabled hidden>{`Select a ${label.toLowerCase()}`}</option>
+          {options.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      ) : (
+        <input
+          className="input"
+          type={type}
+          value={inputValue}
+          onChange={(e) => handleInputChange(e.target.value)}
+        />
+      )}
     </div>
   );
-}
+};
+
 export default Input;

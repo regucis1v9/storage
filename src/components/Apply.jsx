@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../css/Regnars.css';
 import Input from './Input';
 
 function Apply() {
@@ -10,6 +9,7 @@ function Apply() {
     CITY: '',
     JOB: '',
     'BIRTH DATE': '',
+    letter: ''
   });
 
   const [workExperienceCount, setWorkExperienceCount] = useState(1);
@@ -33,9 +33,19 @@ function Apply() {
     }));
   };
 
+  const handleLetterChange = (event) => {
+    const letterValue = event.target.value;
+    handleInputChange('letter', letterValue);
+  };
+
+  const handleDropdownChange = (value) => {
+    handleInputChange('JOB', value);
+  };
+
   const handleApplyClick = async () => {
+    console.log(formData);
     try {
-      const response = await fetch('http://localhost/storageAPI/createApplicant.php ', {
+      const response = await fetch('http://localhost:8888/storageAPI/createApplicant.php ', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +56,7 @@ function Apply() {
       if (response.ok) {
         const result = await response.json();
         console.log('Server response:', result);
-        if(result['message'] == "Applicant inserted"){
+        if (result['message'] === "Applicant inserted") {
           setNotificationClass();
         }
       } else {
@@ -58,9 +68,11 @@ function Apply() {
       // Set the class to 'error' to show notification and overlay
     }
   };
-  const closeAlert = () =>{
+
+  const closeAlert = () => {
     setNotificationClass('none');
-  }
+  };
+
   const appendInput = () => {
     setWorkExperienceCount((prevCount) => prevCount + 1);
   };
@@ -76,22 +88,24 @@ function Apply() {
     }
   };
 
+  const jobOptions = ['Plauktu kartotajs', 'Darbinieks'];
+
   return (
     <div className='applyMain'>
       <div className={`overlay ${notificationClass}`}></div>
       <div className={`notification ${notificationClass}`}>
-        You've applied succesfully, we'll get back to you as soon as possible!
+        You've applied successfully, we'll get back to you as soon as possible!
         <div className="closeNotification" onClick={closeAlert}>X</div>
       </div>
       <div className="applyContainer">
         <div className="applySection">
           <div className="sectionTitle">PERSONAL INFORMATION</div>
-          <Input label="NAME" type="text" onChange={(value) => handleInputChange('NAME', value)} />
-          <Input label="SURNAME" type="text" onChange={(value) => handleInputChange('SURNAME', value)} />
-          <Input label="EMAIL" type="text" onChange={(value) => handleInputChange('EMAIL', value)} />
-          <Input label="CITY" type="text" onChange={(value) => handleInputChange('CITY', value)} />
-          <Input label="JOB" type="text" onChange={(value) => handleInputChange('JOB', value)} />
-          <Input label="BIRTH DATE" type="date" onChange={(value) => handleInputChange('BIRTH DATE', value)} />
+          <Input label="NAME" type="text" inputValue={formData['NAME']} handleInputChange={(value) => handleInputChange('NAME', value)} />
+          <Input label="SURNAME" type="text" inputValue={formData['SURNAME']} handleInputChange={(value) => handleInputChange('SURNAME', value)} />
+          <Input label="EMAIL" type="text" inputValue={formData['EMAIL']} handleInputChange={(value) => handleInputChange('EMAIL', value)} />
+          <Input label="CITY" type="text" inputValue={formData['CITY']} handleInputChange={(value) => handleInputChange('CITY', value)} />
+          <Input label="JOB" type="dropdown" inputValue={formData['JOB']} handleInputChange={handleDropdownChange} options={jobOptions} />
+          <Input label="BIRTH DATE" type="date" inputValue={formData['BIRTH DATE']} handleInputChange={(value) => handleInputChange('BIRTH DATE', value)} />
         </div>
         <div className="applySection secondBox" id="experience">
           <div className="sectionTitle">WORK EXPERIENCE</div>
@@ -100,12 +114,15 @@ function Apply() {
               <Input
                 key={index}
                 label={`Experience ${index + 1}`}
-                onChange={(value) => handleWorkExperienceChange(index + 1, value)}
+                inputValue={workExperienceData[index + 1]}
+                handleInputChange={(value) => handleWorkExperienceChange(index + 1, value)}
               />
             ))}
           </div>
           <div className="appendButton" onClick={appendInput}>+</div>
           <div className="removeButton" onClick={removeInput}>-</div>
+          <div className="sectionTitle">Motivation letter</div>
+          <textarea className="motivationLetter" onChange={handleLetterChange}></textarea>
         </div>
         <div className='button' onClick={handleApplyClick}>APPLY</div>
       </div>
