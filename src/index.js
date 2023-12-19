@@ -12,6 +12,16 @@ import {
   KartotajsMessages,
   KartotajsReports,
   KartotajsStorage,
+  App,
+  Test,
+  MadeInChina,
+  Onlyteez,
+  OrderCheck,
+  Appaerify,
+  Zega,
+  StorageAdd,
+  StorageEdit,
+  Mail,
 } from './components';
 
   const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -28,6 +38,16 @@ import {
         <Route path="/KartotajsStorage" element={<KartotajsStorage /> } />
         <Route path="/KartotajsReports" element={<KartotajsReports /> } />
         <Route path="/KartotajsMessages" element={<KartotajsMessages /> } />
+        <Route path="/darbinieks" element={<App/>}/>
+        <Route path="/test" element={<Test/>}/>
+        <Route path="/MadeInChina" element={<MadeInChina/>}/>
+        <Route path="/Onlyteez" element={<Onlyteez/>}/>
+        <Route path="/OrderCheck" element={<OrderCheck/>}/>
+        <Route path="/Appaerify" element={<Appaerify/>}/>
+        <Route path="/Zega" element={<Zega/>}/>
+        <Route path="/StorageAdd" element={<StorageAdd/>}/>
+        <Route path="/StorageEdit" element={<StorageEdit/>}/>
+        <Route path="/Mail" element={<Mail/>}/>
       </Routes>
     </Router>
   );
