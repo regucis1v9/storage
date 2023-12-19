@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/Regnars.css';
+import Cookies from 'js-cookie';
 
 function Applicants() {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const role = Cookies.get('role');
+    if (role !== 'admin') {
+      navigate('../login');
+    }
+  }, [navigate]);
+
   const [applicantsData, setApplicantsData] = useState([]);
 
   const fetchApplicantsData = async () => {
@@ -17,9 +26,8 @@ function Applicants() {
   };
 
   useEffect(() => {
-    // Fetch data when the component mounts
     fetchApplicantsData();
-  }, []); // The empty dependency array ensures that this effect runs only once on mount
+  }, []); 
 
   const redirect = (id) => {
     navigate('/applicantdetails/' + id);

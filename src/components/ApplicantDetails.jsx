@@ -1,8 +1,20 @@
 import '../css/Regnars.css';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function ApplicantDetails() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const role = Cookies.get('role');
+    if (role !== 'admin') {
+      navigate('../login');
+    }
+  }, [navigate]);
+
   const { id } = useParams();
   const [applicantData, setApplicantData] = useState({});
   const [experienceData, setExperienceData] = useState([]);

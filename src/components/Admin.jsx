@@ -1,11 +1,20 @@
 import React from 'react';
+import { useEffect } from 'react';
 import '../css/styles.css';
 import Box from './Box.js';
-import { faWarehouse, faTruck, faCheck, faFile, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-
+import { faTruck, faCheck, faFile, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
 
 function Admin() {
-  
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const role = Cookies.get('role');
+    if (role !== 'admin') {
+      navigate('../login');
+    }
+  }, [navigate]);
   return (
     <div className='container-mar'>
         <div className="topBar-mar"><span className='spanTop-mar'>NOLIKTAVAS DARBINIEKS</span></div>
