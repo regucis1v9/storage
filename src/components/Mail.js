@@ -51,7 +51,7 @@ function Mail() {
     <div className='containerStorage-mar'>
       <div className="topBar-mar"><span className='spanTop-mar'>STORAGE</span></div>
       <div className="messageContainer-mar">
-        <div className='storageContainerHeading'>YOUR MESSAGES</div>
+        <div className='storageContainerHeading'>YOUR MESSAGESs</div>
         
       </div>
 
