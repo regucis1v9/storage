@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Input = ({ label, type, inputValue, handleInputChange, options }) => {
+
   return (
     <div className="inputContainer">
       <label className='inputLabel'>{label}</label>

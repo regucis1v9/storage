@@ -210,7 +210,7 @@
   .sectionTitle{
     font-size:35px;
     text-align: center;
-    width:100%;
+    width:80%;
     color:white;
   }
   .inputContainer{
@@ -218,11 +218,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     position: relative;
     margin-top:20px;
   }
-  .inputError{
+  .applyError, .inputError{
     color:white;
+    width: 80%;
+    text-align: left;
+  }
+  .letterError{
+    width:90%;
+    color:white;
+    text-align:left;
   }
   .marginNone{
     margin:0px;

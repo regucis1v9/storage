@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 import '../css/Regnars.css';
 
@@ -8,6 +9,7 @@ function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [usernameError, setUsernameError] = useState('');
   const [passwordError, setPasswordError] = useState('');
+  const navigate = useNavigate();
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -39,12 +41,6 @@ const handleLogin = async () => {
     if (usernameError || passwordError) {
       return;
     }
-  
-    // Set cookies with input values
-    Cookies.set('username', username);
-    Cookies.set('password', password);
-  
-    // Prepare data for the fetch request
     const data = {
       username: username,
       password: password,
@@ -63,14 +59,25 @@ const handleLogin = async () => {
   
       // Handle the response from the backend
       const message = responseData.message;
-      console.log('Response from backend:', message);
+      console.log('Response from backend:', responseData);
   
       if (message === 'Invalid password') {
         setPasswordError(message);
       }else if(message === "User not found"){
         setUsernameError(message);
-      }else{
-        console.log("Login successfull!");
+      }else if(message === "Successfully logged in."){
+        Cookies.set('username', responseData.username, { expires: 1/24 });
+        Cookies.set('token', responseData.token, { expires: 1/24 });
+        Cookies.set('role', responseData.role, { expires: 1/24 });
+        let redirect = "";
+        if( responseData.role === "admin"){
+          redirect = "admin";
+        }else if( responseData.role === "Plauktu kartotajs" ){
+          redirect = "kartotajs"
+        }else if( responseData.role === "Darbinieks" ){
+          redirect = "darbinieks"
+        }
+        navigate(`../${redirect}`)
       }
   
     } catch (error) {

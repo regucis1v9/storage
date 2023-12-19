@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Input from './Input';
 
 function Apply() {
+
   const [formData, setFormData] = useState({
     NAME: '',
     SURNAME: '',
@@ -11,6 +12,24 @@ function Apply() {
     'BIRTH DATE': '',
     letter: ''
   });
+  const resetForm = () => {
+    setFormData({
+      NAME: '',
+      SURNAME: '',
+      EMAIL: '',
+      CITY: '',
+      JOB: '',
+      'BIRTH DATE': '',
+      letter: ''
+    });
+  }
+  const [nameError, setNameError] = useState('');
+  const [surnameError, setSurnameError] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [cityError, setCityError] = useState('');
+  const [jobError, setJobError] = useState('');
+  const [birthError, setBirthError] = useState('');
+  const [letterError, setLetterError] = useState('');
 
   const [workExperienceCount, setWorkExperienceCount] = useState(1);
   const [workExperienceData, setWorkExperienceData] = useState({
@@ -43,8 +62,59 @@ function Apply() {
   };
 
   const handleApplyClick = async () => {
-    console.log(formData);
-    try {
+    let errors = false;
+
+    if(formData.NAME === ''){
+      setNameError('This field needs to be filled out');
+      errors = true;
+    }else{
+      setNameError('');
+      errors =false;
+    }
+    if(formData.SURNAME === ''){
+      setSurnameError('This field needs to be filled out');
+      errors = true;
+    }else{
+      setSurnameError('');
+      errors =false;
+    }
+    if(formData.EMAIL === ''){
+      setEmailError('This field needs to be filled out');
+      errors = true;
+    }else{
+      setEmailError('');
+      errors =false;
+    }
+    if(formData.CITY === ''){
+      setCityError('This field needs to be filled out');
+      errors = true;
+    }else{
+      setEmailError('');
+      errors =false;
+    }
+    if(formData.JOB === ''){
+      setJobError('This field needs to be filled out');
+      errors = true;
+    }else{
+      setJobError('');
+      errors =false;
+    }
+    if(formData['BIRTH DATE'] === ''){
+      setBirthError('This field needs to be filled out');
+      errors = true;
+    }else{
+      setBirthError('');
+      errors =false;
+    }
+    if(formData.letter === ''){
+      setLetterError('This field needs to be filled out');
+      errors = true;
+    }else{
+      setLetterError('');
+      errors =false;
+    }
+    if(errors === false){
+      try {
       const response = await fetch('http://localhost:8888/storageAPI/createApplicant.php ', {
         method: 'POST',
         headers: {
@@ -58,6 +128,8 @@ function Apply() {
         console.log('Server response:', result);
         if (result['message'] === "Applicant inserted") {
           setNotificationClass();
+          resetForm();
+          handleInputChange('letter', '')
         }
       } else {
         console.error('Failed to submit data to the server.');
@@ -67,6 +139,8 @@ function Apply() {
       console.error('Error sending data to the server:', error);
       // Set the class to 'error' to show notification and overlay
     }
+    }
+ 
   };
 
   const closeAlert = () => {
@@ -101,11 +175,17 @@ function Apply() {
         <div className="applySection">
           <div className="sectionTitle">PERSONAL INFORMATION</div>
           <Input label="NAME" type="text" inputValue={formData['NAME']} handleInputChange={(value) => handleInputChange('NAME', value)} />
+          <p className='applyError'>{nameError}</p>
           <Input label="SURNAME" type="text" inputValue={formData['SURNAME']} handleInputChange={(value) => handleInputChange('SURNAME', value)} />
+          <p className='applyError'>{surnameError}</p>
           <Input label="EMAIL" type="text" inputValue={formData['EMAIL']} handleInputChange={(value) => handleInputChange('EMAIL', value)} />
+          <p className='applyError'>{emailError}</p>
           <Input label="CITY" type="text" inputValue={formData['CITY']} handleInputChange={(value) => handleInputChange('CITY', value)} />
+          <p className='applyError'>{cityError}</p>
           <Input label="JOB" type="dropdown" inputValue={formData['JOB']} handleInputChange={handleDropdownChange} options={jobOptions} />
+          <p className='applyError'>{jobError}</p>
           <Input label="BIRTH DATE" type="date" inputValue={formData['BIRTH DATE']} handleInputChange={(value) => handleInputChange('BIRTH DATE', value)} />
+          <p className='applyError'>{birthError}</p>
         </div>
         <div className="applySection secondBox" id="experience">
           <div className="sectionTitle">WORK EXPERIENCE</div>
@@ -123,6 +203,7 @@ function Apply() {
           <div className="removeButton" onClick={removeInput}>-</div>
           <div className="sectionTitle">Motivation letter</div>
           <textarea className="motivationLetter" onChange={handleLetterChange}></textarea>
+          <p className='letterError'>{letterError}</p>
         </div>
         <div className='button' onClick={handleApplyClick}>APPLY</div>
       </div>

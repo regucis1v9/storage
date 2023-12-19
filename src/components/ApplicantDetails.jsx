@@ -60,7 +60,7 @@ function ApplicantDetails() {
       <div className="detailContainer">
         <div className="left">
           <div className="basicDataRow">Name: {applicantData.name}</div>
-          <div className="basicDataRow">Age: {applicantData.age}</div>
+          <div className="basicDataRow">City: {applicantData.city}</div>
           <div className="basicDataRow">Birth date: {applicantData.birth_date}</div>
           <div className="basicDataRow">Desired position: {applicantData.job}</div>
           <div className="applicationLetter">{applicantData?.letter}</div>
