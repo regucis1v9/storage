@@ -1,0 +1,43 @@
+.kartotajs-inputbox{
+    display:flex;
+    height:75%;
+    width:650px;
+    border-radius:7px;
+    background: rgba(255, 72, 72, 0.49);
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+.kartotajs-inputbox-elements{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+.kartotajs-prece{
+    display:flex;
+    width:65%;
+    height:35px;
+    border-radius:7px;
+    background-color: transparent;
+    border: 3px solid rgb(128, 128, 128);
+    margin-top:15px;
+    text-align:left;
+}
+.kartotajs-button{
+    display:flex;
+    height: 40px;
+    width:300px;
+    border-radius:7px;
+    margin-top:45px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(119, 54, 54, 0.87);
+    font-family: 'Jost', sans-serif;
+    font-size:20px;
+    color:white;
+    flex-wrap:wrap;
+    text-decoration: none;
+    border:2px solid rgb(128, 128, 128);
+}

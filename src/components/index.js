@@ -4,3 +4,7 @@ export { default as Admin } from './Admin';
 export { default as Applicants } from './Applicants';
 export { default as ApplicantDetails} from './ApplicantDetails';
 export { default as Login } from './Login';
+export { default as KartotajsMain } from './Kartotajs-main';
+export { default as KartotajsMessages } from './Kartotajs-messages';
+export { default as KartotajsReports } from './Kartotajs-reports';
+export { default as KartotajsStorage } from './Kartotajs-storage';

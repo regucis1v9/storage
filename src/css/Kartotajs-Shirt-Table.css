@@ -1,0 +1,23 @@
+.shirt-table-container {
+    margin: 20px;
+}
+
+.shirt-table {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.table-row {
+    display: flex;
+    border: 1px solid #af5757;
+}
+
+.header-row {
+    background-color: #c44c4c;
+}
+
+.table-cell {
+    flex: 1;
+    padding: 8px;
+}

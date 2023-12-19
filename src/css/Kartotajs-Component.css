@@ -1,0 +1,8 @@
+.component-main{
+    display:flex;
+    width:30%;
+    height:20%;
+    border-radius:7px;
+    background-color: black;
+    border:1px gray;
+}

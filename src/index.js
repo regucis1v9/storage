@@ -7,7 +7,11 @@ import {
   Admin,
   Applicants,
   ApplicantDetails,
-  Login
+  Login,
+  KartotajsMain,
+  KartotajsMessages,
+  KartotajsReports,
+  KartotajsStorage,
 } from './components';
 
   const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -20,6 +24,10 @@ import {
         <Route path="/admin" element={<Admin />} />
         <Route path="/applicants" element={<Applicants />} />
         <Route path="/applicantdetails/:id" element={<ApplicantDetails />} />
+        <Route path="/kartotajs" element={<KartotajsMain />} />
+        <Route path="/KartotajsStorage" element={<KartotajsStorage /> } />
+        <Route path="/KartotajsReports" element={<KartotajsReports /> } />
+        <Route path="/KartotajsMessages" element={<KartotajsMessages /> } />
       </Routes>
     </Router>
   );
