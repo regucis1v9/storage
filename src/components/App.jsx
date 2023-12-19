@@ -11,11 +11,12 @@ function App() {
         <div className="topBar-mar"><span className='spanTop-mar'>NOLIKTAVAS DARBINIEKS</span></div>
         <div className="boxContainer-mar">
         <Box icon={faWarehouse} text="STORAGE" notiStyle="noti-mar-off" location="StorageAdd"/>
-        <Box icon={faWarehouse} text="STORAGEEDD" notiStyle="noti-mar-off" location="StorageEdit"/>
+        {/* <Box icon={faWarehouse} text="STORAGEEDD" notiStyle="noti-mar-off" location="StorageEdit"/> */}
         <Box icon={faTruck} text="ORDER" notiStyle="noti-mar-off" location="test"/>
         <Box icon={faCheck} text="O-CHECK" notiStyle="noti-mar-on" location="OrderCheck"/>
         <Box icon={faFile} text="REPORTS" notiStyle="noti-mar-on"/>
         <Box icon={faEnvelope} text="MESSAGE" notiStyle="noti-mar-off" location="Mail"/>
+        <Box icon={faEnvelope} text="PRODUCTS" notiStyle="noti-mar-off" location="AllProducts"/>
        
         </div>
     </div>

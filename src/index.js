@@ -10,6 +10,7 @@ import Zega from './components/Zega.js';
 import StorageAdd from './components/StorageAdd.js';
 import StorageEdit from './components/StorageEdit.js';
 import Mail from './components/Mail.js';
+import AllProducts from './components/AllProducts.js';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 ReactDOM.render(
@@ -25,6 +26,7 @@ ReactDOM.render(
       <Route path="/StorageAdd" element={<StorageAdd/>}/>
       <Route path="/StorageEdit" element={<StorageEdit/>}/>
       <Route path="/Mail" element={<Mail/>}/>
+      <Route path="/AllProducts" element={<AllProducts/>}/>
     </Routes>
   </Router>,
   document.getElementById('root')
