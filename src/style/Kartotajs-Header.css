@@ -1,0 +1,15 @@
+.header-main{
+    height:7vh;
+    width:100vw;
+    display:flex;
+    flex-direction:row;
+    background-color: #D93333;
+    align-items:center;
+    justify-content:center;
+    font-family: 'Jost', sans-serif;
+}
+.header-text{
+    display:flex;
+    color:white;
+    font-size:35px;
+}
