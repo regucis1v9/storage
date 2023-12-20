@@ -3,8 +3,20 @@ import '../css/styles.css';
 import CheckBox from './CheckBox.js';
 import OrderedBox from './OrderedBox.js';
 import OrderDetails from './OrderDetails.js';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function OrderCheck() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const role = Cookies.get('role');
+    if (role !== 'darbinieks') {
+      navigate('../login');
+    }
+  }, [navigate]);
+
   const [orders, setOrders] = useState([]);
   const [isDetailsVisible, setIsDetailsVisible] = useState(false);
   const [selectedOrder, setSelectedOrder] = useState(null);

@@ -1,8 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/styles.css';
 import TeezBox from './TeezBox.js';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function Zega() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const role = Cookies.get('role');
+    if (role !== 'darbinieks') {
+      navigate('../login');
+    }
+  }, [navigate]);
+
   const [quantities, setQuantities] = useState({
     BLUE: 0,
     RED: 0,

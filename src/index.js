@@ -22,11 +22,20 @@ import {
   StorageAdd,
   StorageEdit,
   Mail,
+  AllProducts,
+  ManageUsers,
+  UserDetails,
+  AuthWrapper,
+  BackButton,
+  LogoutButton
 } from './components';
 
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
     <Router>
+      <AuthWrapper>
+      <BackButton/>
+      <LogoutButton/>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
@@ -48,6 +57,10 @@ import {
         <Route path="/StorageAdd" element={<StorageAdd/>}/>
         <Route path="/StorageEdit" element={<StorageEdit/>}/>
         <Route path="/Mail" element={<Mail/>}/>
+        <Route path="/AllProducts" element={<AllProducts/>}/>
+        <Route path="/ManageUsers" element={<ManageUsers/>}/>
+        <Route path="UserDetails/:id" element={<UserDetails/>}/>
       </Routes>
+      </AuthWrapper>
     </Router>
   );

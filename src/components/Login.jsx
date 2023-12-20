@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import '../css/Regnars.css';
 
 function Login() {
+  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -66,15 +67,17 @@ const handleLogin = async () => {
       }else if(message === "User not found"){
         setUsernameError(message);
       }else if(message === "Successfully logged in."){
-        Cookies.set('username', responseData.username, { expires: 1/24 });
+        Cookies.set('username', responseData.username);
         Cookies.set('token', responseData.token, { expires: 1/24 });
-        Cookies.set('role', responseData.role, { expires: 1/24 });
         let redirect = "";
         if( responseData.role === "admin"){
+          Cookies.set('role', 'admin', { expires: 1/24 });
           redirect = "admin";
         }else if( responseData.role === "Plauktu kartotajs" ){
+          Cookies.set('role', 'kartotajs', { expires: 1/24 });
           redirect = "kartotajs"
         }else if( responseData.role === "Darbinieks" ){
+          Cookies.set('role', 'darbinieks', { expires: 1/24 });
           redirect = "darbinieks"
         }
         navigate(`../${redirect}`)

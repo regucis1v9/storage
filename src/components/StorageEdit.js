@@ -1,6 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import '../css/styles.css';
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+
+
 function StorageEdit() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const role = Cookies.get('role');
+    if (role !== 'darbinieks') {
+      navigate('../login');
+    }
+  }, [navigate]);
+
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {

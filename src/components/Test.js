@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import '../css/styles.css';
 import { faWarehouse, faTruck, faCheck, faFile, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import Supplier from './Supplier.js';
@@ -6,10 +6,20 @@ import China from './images/china.png';
 import Appa from './images/Appa.png';
 import Only from './images/only.png';
 import Zega from './images/zega.png';
-
+import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function Test() {
   
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const role = Cookies.get('role');
+    if (role !== 'darbinieks') {
+      navigate('../login');
+    }
+  }, [navigate]);
+
   return (
     <div className='containerTest-mar'>
         <div className="topBar-mar"><span className='spanTop-mar'>ORDER</span></div>

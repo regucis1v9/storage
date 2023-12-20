@@ -4,7 +4,9 @@ import "../css/kartotajs-box.css";
 import "../css/Kartotajs.css";
 import KartotajsShirtTable from "./Kartotajs-shirt-table";
 import KartotajsShirtSearch from "./Kartotajs-shirt-search";
+
 const KartotajsBox = () => {
+
     return (
         <div className="kartotajs-main">
             <div className="kartotajs-row">

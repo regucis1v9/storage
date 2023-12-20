@@ -307,7 +307,7 @@
   .applicantContainer{
     width:80vw;
     min-width: 320px;
-    height:700px;
+    height:580px;
     overflow-y: auto;
     background-color: #101010;
     display: flex;
@@ -319,6 +319,39 @@
     height:10%;
     border-bottom: solid #d33838 3px;
     display: flex;
+  }
+  .usersTop{
+    width:95%;
+    height:10%;
+    border-bottom: solid #d33838 3px;
+    justify-content: space-between;
+    display: flex;
+  }
+  .userJob{
+    width: 30%;
+    height: 100%;
+    color: white;
+    font-size: calc(1vmin + 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .userUsername{
+    width:40%;
+    height:100%;
+    color:white;
+    font-size:calc(1vmin + 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    overflow-x:auto;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .applicantRow{
     width:95%;
@@ -389,6 +422,22 @@
     background-color: #101010;
     display:flex;
     flex-wrap: wrap;
+    border-radius: 5px;
+    margin-top:20px;
+  }
+  .updateContainer{
+    margin-top:30px;
+    width: 45vw;
+    min-width: 300px;
+    min-height:600px;
+    background-color: #101010;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    justify-content: space-evenly;
+    outline:solid #d33838 2px;
+    box-shadow: rgb(0 0 0 / 49%) 0px 5px 15px 10px;
   }
   .buttonContainer{
     height:120px;
@@ -449,6 +498,16 @@
     width:80%;
     margin-top:10px;
   }
+  .basicDataRow2{
+    font-size: 30px;
+    color: white;
+    width: 80%;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
   .applicationLetter{
     width:90%;
     background-color: #1a1a1a;
@@ -477,12 +536,42 @@
     justify-content: flex-start;
     align-items: center;
   }
+  .BackButton{
+    position: absolute;
+    background-color: #d33838;
+    border:none;
+    outline: none;
+    font-size:20px;
+    padding: 10px;
+    padding-bottom: 25px;
+    padding-top:25px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+  }
+  .LogoutButton{
+    position: absolute;
+    background-color: #d33838;
+    border:none;
+    outline: none;
+    right:0px;
+    font-size:20px;
+    padding: 10px;
+    padding-bottom: 25px;
+    padding-top:25px;
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+  }
   /* media */
   @media only screen and (max-width: 950px) {
     .containerCity, .containerIndex, .containerJob, .containerName{
       justify-content: flex-start;
     }
  }
+ @media only screen and (max-width: 800px) {
+  .userJob, .userUsername{
+    justify-content: flex-start;
+  }
+}
   @media only screen and (max-width: 749px) {
     .applyMain{
       overflow-x:hidden;
@@ -495,6 +584,9 @@
    }
  }
   @media only screen and (max-width: 666px) {
+    .detailContainer{
+      margin-top:100px;
+    }
      .square{
       display: none;
     }
@@ -505,7 +597,7 @@
       width:100%;
     }
     .acceptUser, .denyUser{
-      width:100%;
+      width:90%;
     }
   }
   @media only screen and (max-width: 450px) { 

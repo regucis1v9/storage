@@ -5,7 +5,7 @@ function OrderBox({ title, price, updateQuantity }) {
   return (
     <div className='productBox-mar'>
       <div className='productHeading-mar'>
-        {title} <span className='midSpan'>/</span> <span className='priceSpan'>{price}</span>$
+        {orderId} <span className='midSpan'>/</span> <span className='priceSpan'>{price}</span>$
       </div>
       <div className='selectContainer2'>
         <select className='sizeSelect-mar'>

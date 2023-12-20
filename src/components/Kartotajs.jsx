@@ -1,6 +1,7 @@
 import React from 'react';
-// import { Link } from "react-router-dom";
+import Box from './Box.js';
 import "../css/Kartotajs.css";
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import {Link} from "react-router-dom";
 const Kartotajs = () => {
     return (
@@ -25,6 +26,7 @@ const Kartotajs = () => {
                         </div>
                         <p className="kartotajs-text"> MESSAGES</p>
                     </Link>
+                    <Box icon={faEnvelope} text="MESSAGE" notiStyle="noti-mar-off" location="../Mail"/>
                 </div>
             </div>
         </div>

@@ -17,4 +17,10 @@ export { default as Appaerify } from './Appaerify.js';
 export { default as Zega } from './Zega.js';
 export { default as StorageAdd } from './StorageAdd.js';
 export { default as StorageEdit } from './StorageEdit.js';
-export { default as Mail } from './Mail.js';
+export { default as Mail } from './Mail.jsx';
+export { default as AllProducts } from './AllProducts.jsx';
+export { default as UserDetails } from './UserDetails.jsx'
+export { default as ManageUsers } from './ManageUsers.jsx';
+export { default as AuthWrapper } from './AuthWrapper.jsx';
+export { default as BackButton } from './BackButton.jsx';
+export { default as LogoutButton } from './LogoutButton.jsx';

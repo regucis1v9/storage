@@ -18,6 +18,7 @@ function ApplicantDetails() {
   const { id } = useParams();
   const [applicantData, setApplicantData] = useState({});
   const [experienceData, setExperienceData] = useState([]);
+  const [notificationClass, setNotificationClass] = useState('none');
 
   const fetchApplicantData = async () => {
     try {
@@ -45,8 +46,8 @@ function ApplicantDetails() {
       if(response.ok){
         const accepted = await response.json();
         console.log(accepted);
+        setNotificationClass();
       }
-
     } catch (error) {
       console.error('Error accepting applicant:', error);
     }
@@ -55,11 +56,17 @@ function ApplicantDetails() {
   const handleDenyClick = async () => {
     try {
       const response = await fetch(`http://localhost:8888/storageAPI/denyUser.php?id=${id}`);
-      const denied = await response.json();
-      console.log('Deny clicked');
+      if(response.ok){
+        navigate('../Applicants')
+      }
     } catch (error) {
       console.error('Error denying applicant:', error);
     }
+  };
+
+  const closeAlert = () => {
+    setNotificationClass('none');
+    navigate('../Applicants')
   };
 
   useEffect(() => {
@@ -69,6 +76,11 @@ function ApplicantDetails() {
 
   return (
     <div className='applyMain'>
+      <div className={`overlay ${notificationClass}`}></div>
+      <div className={`notification ${notificationClass}`}>
+        Person hired successfully!
+        <div className="closeNotification" onClick={closeAlert}>X</div>
+      </div>
       <div className="detailContainer">
         <div className="left">
           <div className="basicDataRow">Name: {applicantData.name}</div>
