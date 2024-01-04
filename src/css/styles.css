@@ -138,6 +138,7 @@
      display: flex;
      justify-content: right;
      align-items: center;
+     display:none;
 }
  .noti-mar-on{
      width: 20px;
@@ -661,6 +662,7 @@ box-shadow: 12px 16px 31.3px 0px #540F0F;
 .messageContainer-mar{
     width: 60%;
     height: 80%;
+    max-height:500px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -682,6 +684,7 @@ box-shadow: 12px 16px 31.3px 0px #540F0F;
     width: 90%;
     min-width:290px;
     margin-top: 20px;
+    margin-bottom:10px;
     border-radius: 5px;
     outline: solid black 3px;
     padding-left: 5px;
@@ -969,6 +972,10 @@ line-height: 80px;
     .storageContainerHeading{
         margin-bottom:50px;
     }
+    .containerStorage-mar{
+        min-height: 100vh;
+        height:auto;
+    }
     .itemID{
         font-size: 15px;;
     }
@@ -1008,6 +1015,7 @@ line-height: 80px;
          letter-spacing: 4px;
     }
     .storageContainer-mar{
+        min-height:100vh;
         width: auto;
     }
     .left-mar{

@@ -56,7 +56,7 @@ function UserDetails() {
       if (response.ok) {
         const accepted = await response.json();
         console.log('Accept Click Response:', accepted);
-        setNotificationClass('none'); // Assuming you want to hide the notification on successful update
+        setNotificationClass(); // Assuming you want to hide the notification on successful update
       } else {
         console.error('Failed to update user:', response.statusText);
       }

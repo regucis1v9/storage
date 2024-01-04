@@ -81,44 +81,47 @@ function MadeInChina() {
     };
 
     fetch('http://localhost:8888/storageAPI/submitOrder.php', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(orderData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        alert('Order submitted successfully:', data);
-        // Clear input fields and reset state
-        setQuantities({
-          BLUE: 0,
-          RED: 0,
-          WHITE: 0,
-          BLACK: 0,
-          MAGENTA: 0,
-          PINK: 0,
-        });
-        setSelectedSizes({
-          BLUE: '',
-          RED: '',
-          WHITE: '',
-          BLACK: '',
-          MAGENTA: '',
-          PINK: '',
-        });
-        setSelectedTypes({
-          BLUE: '',
-          RED: '',
-          WHITE: '',
-          BLACK: '',
-          MAGENTA: '',
-          PINK: '',
-        });
-      })
-      .catch((error) => {
-        alert('Error submitting order:', error);
-      });
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(orderData),
+})
+  .then((response) => response.json())
+  .then((data) => {
+    console.log('Server response:', data); // Log the server's response
+    alert('Order submitted successfully:', data);
+    // Clear input fields and reset state
+    setQuantities({
+      BLUE: 0,
+      RED: 0,
+      WHITE: 0,
+      BLACK: 0,
+      MAGENTA: 0,
+      PINK: 0,
+    });
+    setSelectedSizes({
+      BLUE: '',
+      RED: '',
+      WHITE: '',
+      BLACK: '',
+      MAGENTA: '',
+      PINK: '',
+    });
+    setSelectedTypes({
+      BLUE: '',
+      RED: '',
+      WHITE: '',
+      BLACK: '',
+      MAGENTA: '',
+      PINK: '',
+    });
+  })
+  .catch((error) => {
+    console.error('Error submitting order:', error); // Log the error
+    alert('Error submitting order:', error);
+  });
+
   };
 
   const handleSortChange = (e) => {
