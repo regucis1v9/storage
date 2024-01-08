@@ -967,6 +967,66 @@ line-height: 80px;
 .lh45{
     line-height:45px;
   }
+  .container-marRep{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(4, 4, 4);
+    /* background: linear-gradient(180deg, rgba(91,18,18,1) 0%, rgba(0,0,0,1) 100%); */
+    display: flex;
+    flex-wrap: wrap;
+}
+.reportForm {
+    width: 20%;
+    min-width: 265px;
+    height: 29%;
+    margin:  auto;
+    margin-top:inherit;
+    background-color: #090909;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  input[type="radio"] {
+    margin-right: 10px;
+    appearance: none; /* Remove default styles */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #D33838;
+    border-radius: 50%;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+  
+  input[type="radio"]:checked {
+    background-color: #D33838;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: white;
+  }
+
+  input[type="radio"]:checked:after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  .submit-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #D33838;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top:40px;
+  }
 /* ---------MEDIA--------- */
  @media only screen and (max-width: 974px) {
     .storageContainerHeading{

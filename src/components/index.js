@@ -24,3 +24,4 @@ export { default as ManageUsers } from './ManageUsers.jsx';
 export { default as AuthWrapper } from './AuthWrapper.jsx';
 export { default as BackButton } from './BackButton.jsx';
 export { default as LogoutButton } from './LogoutButton.jsx';
+export { default as Reports } from './Reports.js' 

@@ -21,7 +21,7 @@ function App() {
         <Box icon={faWarehouse} text="STORAGE" notiStyle="noti-mar-off" location="../StorageAdd"/>
         <Box icon={faTruck} text="ORDER" notiStyle="noti-mar-off" location="../test"/>
         <Box icon={faCheck} text="O-CHECK" notiStyle="noti-mar-on" location="../OrderCheck"/>
-        <Box icon={faFile} text="REPORTS" notiStyle="noti-mar-on"/>
+        <Box icon={faFile} text="REPORTS" notiStyle="noti-mar-on"location="../report"/>
         <Box icon={faEnvelope} text="MESSAGE" notiStyle="noti-mar-off" location="../Mail"/>
         <Box icon={faEnvelope} text="PRODUCTS" notiStyle="noti-mar-off" location="../AllProducts"/>
         </div>

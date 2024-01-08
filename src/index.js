@@ -27,7 +27,8 @@ import {
   UserDetails,
   AuthWrapper,
   BackButton,
-  LogoutButton
+  LogoutButton,
+  Reports
 } from './components';
 
   const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -48,6 +49,7 @@ import {
         <Route path="/KartotajsReports" element={<KartotajsReports /> } />
         <Route path="/KartotajsMessages" element={<KartotajsMessages /> } />
         <Route path="/darbinieks" element={<App/>}/>
+        <Route path="report" element={<Reports/>}/>
         <Route path="/test" element={<Test/>}/>
         <Route path="/MadeInChina" element={<MadeInChina/>}/>
         <Route path="/Onlyteez" element={<Onlyteez/>}/>
