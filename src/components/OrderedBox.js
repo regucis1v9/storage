@@ -1,9 +1,9 @@
 import React from 'react';
 
-function OrderedBox({ dateArrived, toggleDetails }) {
+function OrderedBox({ orderId, dateArrived, toggleDetails }) {
     return (
         <div className='orderBox2-mar'>
-            <div className='productHeading-mar'>order 1</div>
+            <div className='productHeading-mar'>order {orderId}</div>
             <div className='orderInfoBox2-mar'>
                 <div className='dateOrdered2'>
                     <div className='orderTitle'>DATE ARRIVED</div>
